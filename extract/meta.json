@@ -1,0 +1,52 @@
+{
+  "name": "ucmr5-first-sample-pfas",
+  "description": "For a U.S. public water system subject to UCMR 5, will its first entry-point sample contain PFOA or PFOS at or above the UCMR 5 minimum reporting level?",
+  "target": "any_pfoa_pfos",
+  "positive_label": 1,
+  "id_columns": [
+    "pwsid"
+  ],
+  "columns": [
+    "pwsid",
+    "collection_date",
+    "sample_id",
+    "pws_size",
+    "facility_water_type",
+    "state",
+    "epa_region",
+    "prior_ucmr3_pfoa_pfos_detect",
+    "prior_ucmr3_max_pfoa_pfos",
+    "pfas_tested_before",
+    "pfas_treatment_before",
+    "potential_pfas_sources",
+    "potential_source_types",
+    "treatment_information",
+    "collection_year",
+    "any_pfoa_pfos"
+  ],
+  "rows": {
+    "train": 3874,
+    "eval": 3769,
+    "holdout": 2430
+  },
+  "positive_rate": {
+    "train": 0.08982963345379452,
+    "eval": 0.08357654550278588,
+    "holdout": 0.0691358024691358
+  },
+  "split": {
+    "eval": {
+      "end": "2024-12-01T00:00:00.000",
+      "start": "2024-01-01T00:00:00.000"
+    },
+    "holdout": {
+      "end": "2026-07-01T00:00:00.000",
+      "start": "2025-01-01T00:00:00.000"
+    },
+    "train": {
+      "end": "2023-12-01T00:00:00.000",
+      "start": "2023-01-01T00:00:00.000"
+    }
+  },
+  "split_description": "Fixed chronological split by the first sample's CollectionDate: train 2023-01-01 to 2023-11-30; eval 2024-01-01 to 2024-11-30; holdout 2025-01-01 to 2026-06-30. Exclude December 2023 and December 2024 as a 31-day embargo at each year boundary so late-period laboratory results are not realized after the next period starts. No random shuffling. Because there is one row per PWS, no panel history is used and no current-sample result enters features."
+}

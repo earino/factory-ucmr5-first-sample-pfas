@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "terms_url": "https://edg.epa.gov/epa_data_license.html",
+  "terms_sha256": "deff40a15da6593a56f4c3bf4a975b1430c809635d382da95cb9dbd3da4ef052",
+  "documentation_url": "https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule",
+  "documentation_sha256": "1e655fb32bf44d0df13f9eebbf188265143a67de4474be1e010af6139c85683d",
+  "quoted_excerpt": "Unless otherwise specified, all data produced by the U.S EPA is by default in the public domain and is not subject to domestic copyright protection under 17 U.S.C. \u00a7 105.",
+  "excerpt_found": true,
+  "excerpt_match": "contiguous",
+  "scope": "Captured publisher bytes and quote presence; semantic applicability reviewed separately"
+}

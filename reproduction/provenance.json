@@ -1,0 +1,11 @@
+{
+  "factory_commit": "fdaf39b7b3f428249b9b42a86fc0c5afa29fffbf",
+  "harness_repository": "earino/harness_benchmark",
+  "harness_commit": "58b434fee9b53eab953b6a3d84baf5cbeb01bc6e",
+  "runner_files": {
+    "train.py": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+    "validate.py": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+    "validate.sh": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+  },
+  "permission": "Copyright holder permission for MIT distribution confirmed 2026-09-19; credits preserved"
+}

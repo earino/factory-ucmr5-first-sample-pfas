@@ -1,0 +1,68 @@
+{
+  "protocol": "Existing unmodified runner baseline on public validation only; no holdout scoring",
+  "rows": 3769,
+  "metrics": {
+    "full_model": {
+      "auc": 0.7856421356421357,
+      "brier": 0.06860848158758656
+    },
+    "majority_prior": {
+      "auc": 0.5,
+      "brier": 0.0766306076535297
+    },
+    "calendar_identity": {
+      "auc": 0.5,
+      "brier": 0.0766306076535297
+    },
+    "persistence": {
+      "auc": 0.4525491493644361,
+      "brier": 0.08101381885983604
+    }
+  },
+  "by_year": {
+    "2024": {
+      "rows": 3769,
+      "positive_rate": 0.08357654550278588,
+      "metrics": {
+        "full_model": {
+          "auc": 0.7856421356421357,
+          "brier": 0.06860848158758656
+        },
+        "majority_prior": {
+          "auc": 0.5,
+          "brier": 0.0766306076535297
+        },
+        "calendar_identity": {
+          "auc": 0.5,
+          "brier": 0.0766306076535297
+        },
+        "persistence": {
+          "auc": 0.4525491493644361,
+          "brier": 0.08101381885983604
+        }
+      }
+    }
+  },
+  "majority_accuracy": 0.9164234544972141,
+  "calendar_identity_unseen_rows": 3769,
+  "persistence": {
+    "training_observed_rows": 1938,
+    "training_missing_rows": 1936,
+    "validation_missing_rows": 2034,
+    "prior_fallback_rows": 2034,
+    "training_min": 0.02,
+    "training_max": 7.0,
+    "direction": 1,
+    "fallback_probability": 0.08982963345379452,
+    "uninformative_training_range": false,
+    "method": "Training min/max ranking; missing history or no varying training range uses training label prior. Not fitted calibration."
+  },
+  "limitations": [
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "runner_files": {
+    "train.py": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8",
+    "validate.py": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b",
+    "validate.sh": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+  }
+}

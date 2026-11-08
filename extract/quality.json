@@ -1,0 +1,374 @@
+{
+  "carry_columns": [
+    "sample_id"
+  ],
+  "evaluation_contract": {
+    "access": "isolated_rows",
+    "cross_row_audit": {
+      "auxiliary_files_review": "Only public/train.csv, public/eval.csv, and private/holdout.csv are written; no fixture labels or answer scaffolds are shipped.",
+      "probes": [],
+      "rationale": "One row per public water system; no panel history or cross-row model features are constructed. Long-format additional-data responses are collapsed only through the exact available sample key, not through a system-only fallback."
+    },
+    "feature_evidence": {
+      "collection_date": {
+        "availability": "event date present and parseable",
+        "source": "UCMR5_All.txt CollectionDate field",
+        "status": "verified"
+      },
+      "collection_year": {
+        "availability": "derived from the event date, known at the decision instant",
+        "source": "derived from UCMR5_All.txt CollectionDate",
+        "status": "verified"
+      },
+      "epa_region": {
+        "availability": "known before the sample per the data summary; current snapshot does not prove historical availability",
+        "source": "UCMR 5 Data Summary and UCMR5_All.txt Region field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "facility_water_type": {
+        "availability": "known before the sample per the data summary; current snapshot does not prove historical availability",
+        "source": "UCMR 5 Data Summary and UCMR5_All.txt FacilityWaterType field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "pfas_tested_before": {
+        "availability": "self-reported around UCMR 5 monitoring; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability unverified",
+        "source": "UCMR5_AddtlDataElem.txt AdditionalDataElement value PFASOccurrence and Response field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "pfas_treatment_before": {
+        "availability": "self-reported prior treatment at the sample point; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability unverified",
+        "source": "UCMR5_AddtlDataElem.txt AdditionalDataElement value PFASTreatment and Response field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "potential_pfas_sources": {
+        "availability": "self-reported around UCMR 5 monitoring; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability unverified",
+        "source": "UCMR5_AddtlDataElem.txt AdditionalDataElement value PotentialPFASSources and Response field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "potential_source_types": {
+        "availability": "self-reported source-type codes; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability unverified",
+        "source": "UCMR5_AddtlDataElem.txt AdditionalDataElement value PotentialPFASSourcesDetail and Response field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "prior_ucmr3_max_pfoa_pfos": {
+        "availability": "prior public UCMR 3 monitoring data; availability before each UCMR 5 sample is assumed, not ledgered; all-nondetect systems receive the maximum reported MRL as a censoring bound",
+        "source": "https://www.epa.gov/system/files/other-files/2024-04/ucmr3-occurrence-data.zip",
+        "status": "assumed"
+      },
+      "prior_ucmr3_pfoa_pfos_detect": {
+        "availability": "prior public UCMR 3 monitoring data; availability before each UCMR 5 sample is assumed, not ledgered",
+        "source": "https://www.epa.gov/system/files/other-files/2024-04/ucmr3-occurrence-data.zip",
+        "status": "assumed"
+      },
+      "pws_size": {
+        "availability": "known before the sample per the data summary; current snapshot does not prove historical availability",
+        "source": "UCMR 5 Data Summary and UCMR5_All.txt Size field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "pwsid": {
+        "availability": "stable identifier carried from the source row",
+        "source": "UCMR5_All.txt PWSID field",
+        "status": "verified"
+      },
+      "sample_id": {
+        "availability": "carried for deterministic tie-break only",
+        "source": "UCMR5_All.txt SampleID field",
+        "status": "verified"
+      },
+      "state": {
+        "availability": "known before the sample per the data summary; current snapshot does not prove historical availability",
+        "source": "UCMR 5 Data Summary and UCMR5_All.txt State field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      },
+      "treatment_information": {
+        "availability": "reported for the sample point; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability unverified",
+        "source": "UCMR5_AddtlDataElem.txt AdditionalDataElement value TreatmentInformation and Response field; https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "status": "assumed"
+      }
+    },
+    "limitations": [
+      "The final UCMR 5 file includes samples collected through mid-2026, beyond the January 2023 through December 2025 monitoring-cycle text on the occurrence page; the frozen holdout window follows the observed data through 2026-06-30.",
+      "UCMR 5 is occurrence monitoring at entry points, not compliance monitoring; a result at or above the minimum reporting level is not a violation or an MCL determination.",
+      "The label is sample-level at one entry point; systems with multiple facilities or sample points can have heterogeneous PFOA or PFOS results.",
+      "The final UCMR 5 dataset was released in 2026; system size reflects a 2021 vintage, UCMR 3 files were revised, and self-reported additional data elements may have been edited after sampling. This is current-vintage retrospective research, not proof of historical operational availability.",
+      "Results below the UCMR 5 minimum reporting level are censored, so the label captures detection at the reporting threshold, not concentration magnitude.",
+      "First-sample collection dates follow monitoring schedules rather than random assignment, so chronological splits can reflect rollout differences by system size, state, and laboratory capacity. First samples whose dates fall in the December embargo or outside the windows are excluded by the fixed first-sample selection and are counted in a source check, so a system whose earliest sample falls there is not represented even if a later in-window sample exists.",
+      "Samples with a blank CollectionDate are excluded and counted before first-sample selection; they are not assigned to any split.",
+      "UCMR 5 covered community water systems and non-transient non-community water systems, not transient non-community systems, and small-system participation was a representative sample rather than a census.",
+      "Additional data element concepts are stored as rows in the AdditionalDataElement field rather than as header columns. The builder filters documented values and attaches Response values only through the exact available system, facility, sample point, and sample event key, or the exact system, facility, and sample point key when no event code exists. It never falls back to a system-only join. Unmatched rows remain missing. The additional-data responses are undated self-reports, so pre-sample availability is assumed rather than proven.",
+      "For UCMR 3 systems with only non-detect PFOA or PFOS rows, the prior maximum uses the maximum reported MRL as a sourced censoring bound, not an observed concentration and not zero. The prior maximum is missing only when the system has no UCMR 3 PFOA or PFOS row.",
+      "The occurrence text file carries a non-UTF-8 micro sign byte in the concentration unit text; the builder decodes publisher text with the Windows-1252 codec and checks UCMR 5 and UCMR 3 units.",
+      "The label check uses an independent csv-module pass over the occurrence text and compares the written labels, source signs, source values, units, and MRLs; it does not rely on the in-memory pandas label expression.",
+      "collection_year is constant within the train and eval windows and is a split tag, not a transferable feature.",
+      "This is a predictive association task, not a causal analysis of source-water contamination or treatment effectiveness."
+    ],
+    "selection": {
+      "conditioning": "No selection on the binary target; the earliest eligible entry-point sample per PWS is selected by CollectionDate with SampleID tie-break, and only first samples whose date falls in a frozen window are shipped. Samples with missing CollectionDate, non-entry-point sample types, or no documented PFOA or PFOS result sign are excluded and counted. First samples in the December embargo or outside the windows are counted, not relabeled or silently dropped. Current-sample result fields are used only for the label and are excluded from features. Additional-data fields are attached only on the exact available sample key; no system-level or cross-event fallback is used, so unmatched rows remain missing.",
+      "evidence": "The earliest entry-point sample per water system is selected by CollectionDate with SampleID tie-break; the current sample AnalyticalResultsSign and AnalyticalResultValue are used only for the label and are excluded from features.",
+      "kind": "prediction_time"
+    },
+    "training_label_timing": "unverified",
+    "use": "retrospective_research",
+    "vintage": {
+      "evidence": "Final UCMR 5 occurrence dataset released August 2026; historical operational availability of features is not proven.",
+      "kind": "current_snapshot"
+    }
+  },
+  "event_key_column": "collection_date",
+  "external_threshold": {
+    "source": "UCMR 5 minimum reporting level for PFOA and PFOS, fixed before sampling",
+    "unit": "ug/L",
+    "value": 0.004
+  },
+  "features": [
+    "pws_size",
+    "facility_water_type",
+    "state",
+    "epa_region",
+    "prior_ucmr3_pfoa_pfos_detect",
+    "prior_ucmr3_max_pfoa_pfos",
+    "pfas_tested_before",
+    "pfas_treatment_before",
+    "potential_pfas_sources",
+    "potential_source_types",
+    "treatment_information",
+    "collection_year"
+  ],
+  "features_documented_at": "prediction_time",
+  "high_cardinality_columns": [
+    "collection_date",
+    "sample_id"
+  ],
+  "id_columns": [
+    "pwsid"
+  ],
+  "label_source_columns": [
+    "AnalyticalResultsSign",
+    "AnalyticalResultValue",
+    "Contaminant"
+  ],
+  "measurements": [
+    {
+      "column": "AnalyticalResultValue",
+      "frame": "UCMR 5 analytical result for PFOA or PFOS at an entry point; a blank value with the less-than sign means below the UCMR 5 minimum reporting level.",
+      "unit": "ug/L"
+    },
+    {
+      "column": "prior_ucmr3_max_pfoa_pfos",
+      "frame": "Maximum detected UCMR 3 PFOA or PFOS result at the same water system where the result sign is the equals code; when the system has only non-detect prior rows, the maximum reported MRL is used as a sourced censoring bound and is not an observed concentration; missing only when the system has no UCMR 3 PFOA or PFOS row.",
+      "unit": "ug/L"
+    }
+  ],
+  "name": "ucmr5-first-sample-pfas",
+  "positive_label": 1,
+  "post_hoc_columns": [
+    "AnalyticalResultsSign",
+    "AnalyticalResultValue",
+    "Contaminant"
+  ],
+  "split_windows": {
+    "eval": {
+      "end": "2024-12-01T00:00:00.000",
+      "start": "2024-01-01T00:00:00.000"
+    },
+    "holdout": {
+      "end": "2026-07-01T00:00:00.000",
+      "start": "2025-01-01T00:00:00.000"
+    },
+    "train": {
+      "end": "2023-12-01T00:00:00.000",
+      "start": "2023-01-01T00:00:00.000"
+    }
+  },
+  "target": "any_pfoa_pfos",
+  "task": {
+    "decision_user": "State drinking-water program manager or utility planning lead deciding which systems to prioritize for PFAS technical assistance, confirmatory sampling, and treatment planning before the first UCMR 5 laboratory results are available.",
+    "features": [
+      {
+        "availability": "Known before the sample from SDWIS and the UCMR 5 data summary; current snapshot does not prove historical availability.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "UCMR 5 size category based on retail population as of February 1, 2021: S at or below 10,000 or L above 10,000.",
+        "name": "pws_size"
+      },
+      {
+        "availability": "Known before the sample per the data summary; current snapshot does not prove historical availability.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "Source water at the facility: SW surface water, GW ground water, GU ground water under direct surface-water influence, or MX combination.",
+        "name": "facility_water_type"
+      },
+      {
+        "availability": "Known before the sample per the data summary; current snapshot does not prove historical availability.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "State abbreviation; tribal systems without primacy are attributed to an EPA region.",
+        "name": "state"
+      },
+      {
+        "availability": "Known before the sample per the data summary; current snapshot does not prove historical availability.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "EPA region 1 through 10 for the system.",
+        "name": "epa_region"
+      },
+      {
+        "availability": "Prior public UCMR 3 monitoring data; availability before each UCMR 5 sample is assumed, not ledgered.",
+        "evidence_url": "https://www.epa.gov/system/files/other-files/2024-04/ucmr3-occurrence-data.zip",
+        "meaning": "Whether the same PWS had PFOA or PFOS at or above the UCMR 3 minimum reporting level in 2013 through 2015; 0 for monitored systems with no detection, 1 for at least one detection, and missing when the system has no UCMR 3 PFOA or PFOS row.",
+        "name": "prior_ucmr3_pfoa_pfos_detect"
+      },
+      {
+        "availability": "Prior public UCMR 3 monitoring data; availability before each UCMR 5 sample is assumed, not ledgered.",
+        "evidence_url": "https://www.epa.gov/system/files/other-files/2024-04/ucmr3-occurrence-data.zip",
+        "meaning": "Maximum detected prior UCMR 3 PFOA or PFOS result in ug/L; when the system has only non-detect prior UCMR 3 rows, the maximum reported UCMR 3 MRL is used as a sourced censoring bound, not an observed concentration; missing only when the system has no UCMR 3 PFOA or PFOS result.",
+        "name": "prior_ucmr3_max_pfoa_pfos"
+      },
+      {
+        "availability": "Self-reported for the system around UCMR 5 monitoring; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability is unverified.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "PWS answer to whether it tested for PFAS before UCMR 5: YES, NO, or DK.",
+        "name": "pfas_tested_before"
+      },
+      {
+        "availability": "Self-reported for the sample point; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability is unverified.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "Prior PFAS treatment codes reported by the PWS, such as PAC, GAC, IEX, NRO, OZN, BAC, MFL, UVL, OTH, or NMT.",
+        "name": "pfas_treatment_before"
+      },
+      {
+        "availability": "Self-reported before or at UCMR 5 monitoring; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability is unverified.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "PWS awareness of any potential current or historical PFAS source: YES, NO, or DK.",
+        "name": "potential_pfas_sources"
+      },
+      {
+        "availability": "Self-reported before or at UCMR 5 monitoring; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability is unverified.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "Selected potential-source codes such as MB military base, FT firefighting training, AO airport operations, WM waste management, MF manufacturing, OG oil and gas, and UT utilities.",
+        "name": "potential_source_types"
+      },
+      {
+        "availability": "Reported for the sample point; attached only when the additional-data row matches the exact available sample key; unmatched rows remain missing; historical availability is unverified.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "Treatment codes at the sample point, such as CON, SFN, GAC, IEX, MFL, or NTU.",
+        "name": "treatment_information"
+      },
+      {
+        "availability": "Known at the decision instant from the event date.",
+        "evidence_url": "https://www.epa.gov/system/files/documents/2023-08/ucmr5-data-summary_0.pdf",
+        "meaning": "Calendar year of the first sample collection date; a split tag that is constant within the train and eval windows.",
+        "name": "collection_year"
+      }
+    ],
+    "outcome_horizon": "Laboratory analysis and reporting of the first sample; the label is observed in the final UCMR 5 dataset released in August 2026.",
+    "population": "Public water systems subject to UCMR 5 whose earliest entry-point sample (SamplePointType EP) with a documented PFOA or PFOS result sign and a nonmissing CollectionDate falls inside one of the frozen half-open split windows. One row per such PWS: that earliest sample by CollectionDate with deterministic tie-break by SampleID. Because the earliest sample is selected before window assignment, first samples in the December 2023 or December 2024 embargo or outside 2023 through 2026 are excluded and counted; a system whose earliest sample falls there is not represented even if a later in-window sample exists. Samples with missing CollectionDate, non-entry-point sample types, or no documented PFOA or PFOS result sign are excluded and counted. UCMR 5 covered community water systems and non-transient non-community water systems, not transient non-community systems.",
+    "prediction_time": "Immediately before the first UCMR 5 entry-point sample is collected, recorded as CollectionDate; current-sample result fields are excluded. System attributes and prior UCMR 3 results are treated as pre-sample. Self-reported additional-data elements are attached only when the additional-data row matches the exact available system, facility, sample point, and sample event key, or the exact system, facility, and sample point key when no event code exists; unmatched rows remain missing and no system-level or cross-event fallback is used. The additional-data responses are undated self-reports, so their availability at the decision instant is assumed, not verified.",
+    "question": "For a U.S. public water system subject to UCMR 5, will its first entry-point sample contain PFOA or PFOS at or above the UCMR 5 minimum reporting level?",
+    "simple_references": "Majority base rate; size, water-source type, state/region, and collection-year controls; persistence baselines using prior UCMR 3 PFOA/PFOS detection and prior maximum result at the same PWS.",
+    "usefulness": "The first sample result is unknown until laboratory analysis; the model ranks systems by pre-sample contamination risk using prior UCMR 3 results, system size and source type, prior PFAS testing and treatment, and reported potential sources. Current-sample result fields are excluded from inputs, and additional-data fields are joined only on the exact available sample key so a later event does not fill an earlier first-sample row."
+  },
+  "time_column": "collection_date",
+  "timing": {
+    "features": {
+      "period": null,
+      "published_days_after_period_end": null,
+      "source_kind": "administrative_record"
+    },
+    "observations": [],
+    "prediction_instant": {
+      "citation": "First UCMR 5 entry-point sample CollectionDate; current-vintage feature availability is unverified.",
+      "days_after_period_end": null,
+      "kind": "event_time",
+      "period": null
+    },
+    "row_selection": {
+      "fields": [
+        "SamplePointType",
+        "CollectionDate",
+        "Contaminant",
+        "AnalyticalResultsSign",
+        "AnalyticalResultValue",
+        "SampleID",
+        "SampleEventCode"
+      ],
+      "rule": "Keep entry-point samples with a documented PFOA or PFOS result sign and a nonmissing CollectionDate, counting and excluding rows that lack either; select the earliest sample per water system by CollectionDate, breaking ties by SampleID; ship only first samples whose date falls in the fixed half-open windows that embargo December 2023 and December 2024 and cover 2023 through June 2026; count and report first samples excluded by the windows."
+    }
+  },
+  "unit_validation": {
+    "checks": 2,
+    "mismatches": 0,
+    "source": "source-checks.json: unit checks",
+    "evidence_sha256": "6c7b703518ecb83900133c26062cf9559449de6b4829978a73fa37f22154c79f"
+  },
+  "splits": {
+    "train": "public/train.csv",
+    "eval": "public/eval.csv",
+    "holdout": "private/holdout.csv"
+  },
+  "expected_duplicate_ids": 0,
+  "positive_events": {
+    "train": {
+      "positives": 348,
+      "distinct_events": 132
+    },
+    "eval": {
+      "positives": 315,
+      "distinct_events": 138
+    },
+    "holdout": {
+      "positives": 168,
+      "distinct_events": 71
+    }
+  },
+  "adversarial_battery": {
+    "version": "1.0.0",
+    "ok": true,
+    "input_digest": "a63cd0849d465f0e90731b9faf2779820f10bd19a6ad90de10aa6caeadac5c16",
+    "code": {
+      "artifact_scrub.py": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68",
+      "leakage_battery.py": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3",
+      "recovery_recipes.py": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "freeze_sha256": "ef3857b221651b8bec196c5598bce625ccd58ef72dc9f3a3265951c041a5ae8e",
+    "all_results_sha256": "9639535f8bfc2bf978eec626b272bf14e8e1e7af69b8f4d906c4ba1676218ec8",
+    "detail_files": {
+      "results-0000.jsonl": {
+        "sha256": "1c545504ca43cdccb8c5c3dfae7d52d35ef3c34a6915b13e069818908d77fd3e",
+        "bytes": 172300
+      }
+    },
+    "exact": [],
+    "failures": [],
+    "flags": [
+      {
+        "name": "lookup_unanimous:potential_pfas_sources+prior_ucmr3_max_pfoa_pfos",
+        "kind": "supervised",
+        "split": "eval",
+        "sha256": "2e057b36f6333c3be6ba6b8a43aeabe296e7c716a0f2358dbbfcfcf4a4350beb",
+        "rows": 3769,
+        "covered": 2,
+        "errors": 2,
+        "auc_covered": 0.0,
+        "auc_full": 0.49826839826839825
+      }
+    ],
+    "flag_count": 1,
+    "attempted": {
+      "statistical": 458,
+      "supervised": 480
+    },
+    "constant_or_uncovered": {
+      "statistical": 32,
+      "supervised": 249
+    },
+    "scope": {
+      "donors": [
+        "self",
+        "all"
+      ],
+      "exploratory_keys": 8,
+      "exploratory_operands": 8,
+      "max_columns": 128,
+      "scored_labels_read": false,
+      "tokens_per_column": 80,
+      "train_labels": "supervised controls only"
+    }
+  }
+}

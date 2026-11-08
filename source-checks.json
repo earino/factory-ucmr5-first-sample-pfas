@@ -1,0 +1,156 @@
+{
+  "checks": [
+    {
+      "check": "UCMR 5 occurrence archive member located",
+      "observed": "selected member UCMR5_All.txt; archive members ['InstructionsforAccessingUCMRResults_Jan2025_508.pdf', 'UCMR5_AddtlDataElem.txt', 'UCMR5_All.txt', 'UCMR5_DataSummary_Jul2026_508.pdf', 'UCMR5_ZIPCodes.txt']",
+      "expected": "the published UCMR 5 occurrence text member is selected from the archive",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 occurrence fields resolved",
+      "observed": "missing []; delimiter '\\t'; header ['PWSID', 'PWSName', 'Size', 'FacilityID', 'FacilityName', 'FacilityWaterType', 'SamplePointID', 'SamplePointName', 'SamplePointType', 'AssociatedFacilityID', 'AssociatedSamplePointID', 'CollectionDate', 'SampleID', 'Contaminant', 'MRL', 'Units', 'MethodID', 'AnalyticalResultsSign', 'AnalyticalResultValue', 'SampleEventCode', 'MonitoringRequirement', 'Region', 'State', 'UCMR1SampleType']",
+      "expected": "every required occurrence field maps to a real header column of the occurrence text",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 additional data element member located",
+      "observed": "selected member UCMR5_AddtlDataElem.txt; archive members ['InstructionsforAccessingUCMRResults_Jan2025_508.pdf', 'UCMR5_AddtlDataElem.txt', 'UCMR5_All.txt', 'UCMR5_DataSummary_Jul2026_508.pdf', 'UCMR5_ZIPCodes.txt']",
+      "expected": "the published UCMR 5 additional data element text member is selected from the archive",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 additional data element exact key and response fields resolved",
+      "observed": "missing []; delimiter '\\t'; header ['PWSID', 'FacilityID', 'SamplePointID', 'SampleEventCode', 'AdditionalDataElement', 'Response', 'IfOtherText']",
+      "expected": "the additional data element text carries the system, facility, and sample point keys plus the data element name and response fields needed for an exact sample-key join",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 additional data element long-format concepts resolved",
+      "observed": "selected member UCMR5_AddtlDataElem.txt; data element values ['DISINFECTANTTYPE', 'LITHIUMOCCURRENCE', 'LITHIUMTREATMENT', 'PFASOCCURRENCE', 'PFASTREATMENT', 'POTENTIALPFASSOURCES', 'POTENTIALPFASSOURCESDETAIL', 'TREATMENTINFORMATION']; mapped features ['pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information']; nonempty response counts {'pfas_tested_before': 66489, 'pfas_treatment_before': 31770, 'potential_pfas_sources': 66469, 'potential_source_types': 14832, 'treatment_information': 104921}",
+      "expected": "each declared additional-data concept is a value of the AdditionalDataElement field with at least one nonempty Response",
+      "passed": true
+    },
+    {
+      "check": "UCMR 3 occurrence member and fields resolved",
+      "observed": "member UCMR3_All.txt; missing []; header ['PWSID', 'PWSName', 'Size', 'FacilityID', 'FacilityName', 'FacilityWaterType', 'SamplePointID', 'SamplePointName', 'SamplePointType', 'AssociatedFacilityID', 'AssociatedSamplePointID', 'CollectionDate', 'SampleID', 'Contaminant', 'MRL', 'Units', 'MethodID', 'AnalyticalResultsSign', 'AnalyticalResultValue', 'SampleEventCode', 'MonitoringRequirement', 'Region', 'State', 'UCMR1SampleType']",
+      "expected": "UCMR 3 occurrence text carries the system identifier, contaminant, result sign, result value, MRL, and unit fields",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 additional data elements joined on the exact available sample key",
+      "observed": "join exact system, facility, sample point, and sample event key; join keys ['pwsid', 'facilityid', 'samplepointid', 'sampleeventcode']; exact key matches 10204; selected rows 10307; no system-only fallback used",
+      "expected": "each additional-data response is attached to the selected first sample only through the same exact available sample key, never through a system-level fallback",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 additional data element features have nonempty coverage after the exact join",
+      "observed": "coverage {'pfas_tested_before': 10201, 'pfas_treatment_before': 4509, 'potential_pfas_sources': 10197, 'potential_source_types': 766, 'treatment_information': 10199}; selected rows 10307; exact key matches 10204; unmatched selected rows 103",
+      "expected": "every declared additional-data feature has at least one nonempty value after the exact sample-key join, while unmatched rows remain missing rather than being filled from another event or system",
+      "passed": true
+    },
+    {
+      "check": "PFOA and PFOS analytes recognized exactly",
+      "observed": "analyte names matched ['PFOA', 'PFOS']; unexpected matched analytes []; missing target analytes []; contaminant names seen ['11CL-PF3OUDS', '4:2FTS', '6:2FTS', '8:2FTS', '9CL-PF3ONS', 'ADONA', 'HFPO-DA', 'LITHIUM', 'NETFOSAA', 'NFDHA', 'NMEFOSAA', 'PFBA', 'PFBS', 'PFDA', 'PFDOA', 'PFEESA', 'PFHPA', 'PFHPS', 'PFHXA', 'PFHXS', 'PFMBA', 'PFMPA', 'PFNA', 'PFOA', 'PFOS', 'PFPEA', 'PFPES', 'PFTA', 'PFTRDA', 'PFUNA']",
+      "expected": "the contaminant field carries exactly the documented PFOA and PFOS acronyms among matched rows and no unrelated analyte is captured by the acronym rule",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 entry-point samples retained",
+      "observed": "retained sample point types ['EP']; entry-point rows scanned 132715; non-entry-point PFOA or PFOS rows excluded 0",
+      "expected": "the retained modeling rows have SamplePointType EP and non-entry-point sample rows are excluded from the population",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 result signs documented",
+      "observed": "sign codes ['<', '=']; unexpected sign rows 0; blank sign rows 0",
+      "expected": "only the less-than and equals result codes occur among included entry-point analyte rows",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 detected rows carry numeric results",
+      "observed": "equals sign rows without a numeric value 0",
+      "expected": "no detected row lacks its numeric analytical result",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 collection dates parse and missing dates are counted",
+      "observed": "blank CollectionDate rows excluded and counted 0; unparseable nonmissing dates 0; selected rows with missing date 0; sample raw dates ['1/10/2023', '1/10/2024', '1/11/2023', '1/11/2024', '1/12/2023']",
+      "expected": "blank CollectionDate rows are excluded before first-sample selection and counted, no nonmissing CollectionDate row is unparseable, and every selected row carries a collection date",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 PFOA and PFOS reporting threshold unit",
+      "observed": "MRL values ['0.004']; unit values ['\u00b5g/L']; normalized units ['ug/l']",
+      "expected": "reported MRL is 0.004 with concentration unit micrograms per liter, where the micro sign byte decodes to the micro prefix",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "UCMR 5 size categories documented",
+      "observed": "size codes ['L', 'S']; blank size rows 0",
+      "expected": "documented categories S and L only among selected first-sample rows",
+      "passed": true
+    },
+    {
+      "check": "UCMR 5 facility water types documented",
+      "observed": "water type codes ['GU', 'GW', 'MX', 'SW']; blank water type rows 0",
+      "expected": "documented types SW, GW, GU and MX only among selected first-sample rows",
+      "passed": true
+    },
+    {
+      "check": "UCMR 3 prior PFOA and PFOS results available",
+      "observed": "rows 73944; systems 4920; sign codes ['<', '=']; unexpected signs 0; detected rows without numeric value 0; non-detect rows without MRL 0",
+      "expected": "prior PFOA or PFOS rows exist with documented result signs, numeric detected values, and a numeric MRL for every non-detect so the censoring bound is sourced",
+      "passed": true
+    },
+    {
+      "check": "UCMR 3 prior PFOA and PFOS reporting units",
+      "observed": "MRL values ['0.02', '0.04']; unit values ['\u00b5g/L']; normalized units ['ug/l']",
+      "expected": "prior UCMR 3 PFOA and PFOS results carry a positive MRL and concentration unit micrograms per liter",
+      "passed": true,
+      "kind": "unit"
+    },
+    {
+      "check": "One row per public water system",
+      "observed": "duplicate system identifier rows 0",
+      "expected": "zero duplicate system identifier rows across the shipped splits",
+      "passed": true
+    },
+    {
+      "check": "Target is binary with both outcomes present",
+      "observed": "target counts {0: 9242, 1: 831}",
+      "expected": "only 0 and 1 occur and both classes are present",
+      "passed": true
+    },
+    {
+      "check": "Declared output columns present",
+      "observed": "missing []; shipped columns ['pwsid', 'sample_id', 'collection_date', 'any_pfoa_pfos', 'pws_size', 'facility_water_type', 'state', 'epa_region', 'facilityid', 'samplepointid', 'samplepointtype', 'sampleeventcode', 'prior_ucmr3_pfoa_pfos_detect', 'prior_ucmr3_max_pfoa_pfos', 'pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information', 'collection_year']",
+      "expected": "every declared identifier, time, feature, carry and target column exists before writing",
+      "passed": true
+    },
+    {
+      "check": "First-sample split window accounting",
+      "observed": "selected first samples 10307; shipped 10073; excluded 234; excluded date span 2023-12-04 to 2024-12-30; blank date rows counted before selection 0",
+      "expected": "every selected first sample is either shipped in exactly one fixed half-open window or explicitly counted as excluded by the December embargo or the 2023 through 2026 outer bounds, and blank collection dates were excluded and counted before first-sample selection",
+      "passed": true
+    },
+    {
+      "check": "Fixed chronological split windows populated",
+      "observed": "train rows 3874 min 2023-01-03 max 2023-11-30; eval rows 3769 min 2024-01-02 max 2024-11-26; holdout rows 2430 min 2025-01-02 max 2026-06-16; rows outside windows 234",
+      "expected": "each split is nonempty and its dates fall inside the frozen half-open window",
+      "passed": true
+    },
+    {
+      "check": "Written CSV headers equal declared columns",
+      "observed": "headers {'train': ['pwsid', 'collection_date', 'sample_id', 'pws_size', 'facility_water_type', 'state', 'epa_region', 'prior_ucmr3_pfoa_pfos_detect', 'prior_ucmr3_max_pfoa_pfos', 'pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information', 'collection_year', 'any_pfoa_pfos'], 'eval': ['pwsid', 'collection_date', 'sample_id', 'pws_size', 'facility_water_type', 'state', 'epa_region', 'prior_ucmr3_pfoa_pfos_detect', 'prior_ucmr3_max_pfoa_pfos', 'pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information', 'collection_year', 'any_pfoa_pfos'], 'holdout': ['pwsid', 'collection_date', 'sample_id', 'pws_size', 'facility_water_type', 'state', 'epa_region', 'prior_ucmr3_pfoa_pfos_detect', 'prior_ucmr3_max_pfoa_pfos', 'pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information', 'collection_year', 'any_pfoa_pfos']}",
+      "expected": "each written CSV header exactly equals ['pwsid', 'collection_date', 'sample_id', 'pws_size', 'facility_water_type', 'state', 'epa_region', 'prior_ucmr3_pfoa_pfos_detect', 'prior_ucmr3_max_pfoa_pfos', 'pfas_tested_before', 'pfas_treatment_before', 'potential_pfas_sources', 'potential_source_types', 'treatment_information', 'collection_year', 'any_pfoa_pfos']",
+      "passed": true
+    },
+    {
+      "check": "Frozen label rule recomputed from an independent source pass",
+      "observed": "scanned rows 1991977; selected raw keys 10073; source positive keys 831; written positive rows 831; positive source rows 1208; mismatches []; missing keys 0; units ['ug/l']; MRL values [0.004]",
+      "expected": "the written labels equal an independent csv-module recomputation from the occurrence text using result sign equals and numeric value at or above 0.004 ug/L for PFOA or PFOS, with the reporting concentration unit and MRL verified from the same source rows",
+      "passed": true
+    }
+  ]
+}

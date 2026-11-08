@@ -1,0 +1,686 @@
+{
+ "ok": true,
+ "dataset": "/output/extract",
+ "gate_version": "1.6.1",
+ "artifact": {
+  "train": {
+   "file": "public/train.csv",
+   "sha256": "4c962f5f9e87f2936818e0636ab4b954a8afbb2900c6d23307d331e95fb5217e",
+   "bytes": 271826
+  },
+  "eval": {
+   "file": "public/eval.csv",
+   "sha256": "f4163dc298227d9b33a66f2f58807b0fe126b62fd32feb159a06e3628879e9e7",
+   "bytes": 261780
+  },
+  "holdout": {
+   "file": "private/holdout.csv",
+   "sha256": "7824b322a77101a31b0f719cfe249c768c665c81f9557a9320cda02ee88727d0",
+   "bytes": 162966
+  },
+  "meta.json": {
+   "file": "meta.json",
+   "sha256": "7b93c7461f50034cdeb5ec7a5aeefe7c6cd9ea85c30be1366332d15e94f0cba6",
+   "bytes": 1707
+  },
+  "quality.json": {
+   "file": "quality.json",
+   "sha256": "b73d99d09d2fcfce15ccf10967965a3d73c1e3800d08cd7dbaeecbcc3096f4df",
+   "bytes": 24499
+  },
+  "scanned_files": {
+   "meta.json": "7b93c7461f50034cdeb5ec7a5aeefe7c6cd9ea85c30be1366332d15e94f0cba6",
+   "private/holdout.csv": "7824b322a77101a31b0f719cfe249c768c665c81f9557a9320cda02ee88727d0",
+   "public/eval.csv": "f4163dc298227d9b33a66f2f58807b0fe126b62fd32feb159a06e3628879e9e7",
+   "public/train.csv": "4c962f5f9e87f2936818e0636ab4b954a8afbb2900c6d23307d331e95fb5217e",
+   "quality.json": "b73d99d09d2fcfce15ccf10967965a3d73c1e3800d08cd7dbaeecbcc3096f4df"
+  },
+  "artifact_version": {
+   "digest": "1bf9c8af47a3cd62f65faa7f22efd3fd66ddc1f8ba0fbb0762b391cf6fb04a10",
+   "components": [
+    "eval",
+    "holdout",
+    "meta.json",
+    "quality.json",
+    "train"
+   ]
+  }
+ },
+ "results": [
+  {
+   "check": "descriptor",
+   "ok": true,
+   "detail": "quality.json loaded for 'ucmr5-first-sample-pfas'",
+   "evidence": {}
+  },
+  {
+   "check": "battery.exact_recovery",
+   "ok": true,
+   "detail": "Any zero-error exact reconstruction of a scored row blocks qualification",
+   "evidence": {
+    "version": "1.0.0",
+    "ok": true,
+    "input_digest": "a63cd0849d465f0e90731b9faf2779820f10bd19a6ad90de10aa6caeadac5c16",
+    "code": {
+     "artifact_scrub.py": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68",
+     "leakage_battery.py": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3",
+     "recovery_recipes.py": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "freeze_sha256": "ef3857b221651b8bec196c5598bce625ccd58ef72dc9f3a3265951c041a5ae8e",
+    "all_results_sha256": "9639535f8bfc2bf978eec626b272bf14e8e1e7af69b8f4d906c4ba1676218ec8",
+    "detail_files": {
+     "results-0000.jsonl": {
+      "sha256": "1c545504ca43cdccb8c5c3dfae7d52d35ef3c34a6915b13e069818908d77fd3e",
+      "bytes": 172300
+     }
+    },
+    "exact": [],
+    "failures": [],
+    "flags": [
+     {
+      "name": "lookup_unanimous:potential_pfas_sources+prior_ucmr3_max_pfoa_pfos",
+      "kind": "supervised",
+      "split": "eval",
+      "sha256": "2e057b36f6333c3be6ba6b8a43aeabe296e7c716a0f2358dbbfcfcf4a4350beb",
+      "rows": 3769,
+      "covered": 2,
+      "errors": 2,
+      "auc_covered": 0.0,
+      "auc_full": 0.49826839826839825
+     }
+    ],
+    "flag_count": 1,
+    "attempted": {
+     "statistical": 458,
+     "supervised": 480
+    },
+    "constant_or_uncovered": {
+     "statistical": 32,
+     "supervised": 249
+    },
+    "scope": {
+     "donors": [
+      "self",
+      "all"
+     ],
+     "exploratory_keys": 8,
+     "exploratory_operands": 8,
+     "max_columns": 128,
+     "scored_labels_read": false,
+     "tokens_per_column": 80,
+     "train_labels": "supervised controls only"
+    }
+   }
+  },
+  {
+   "check": "battery.recorded_in_quality",
+   "ok": true,
+   "detail": "Construction must record the computed battery receipt in quality.json; use --record-battery",
+   "evidence": {}
+  },
+  {
+   "check": "artifacts.no_shipped_answers",
+   "ok": true,
+   "detail": "Every generated artifact file is scanned for shipped answer scaffolds",
+   "evidence": {
+    "version": "1.0.1",
+    "ok": true,
+    "files": {
+     "meta.json": "7b93c7461f50034cdeb5ec7a5aeefe7c6cd9ea85c30be1366332d15e94f0cba6",
+     "private/holdout.csv": "7824b322a77101a31b0f719cfe249c768c665c81f9557a9320cda02ee88727d0",
+     "public/eval.csv": "f4163dc298227d9b33a66f2f58807b0fe126b62fd32feb159a06e3628879e9e7",
+     "public/train.csv": "4c962f5f9e87f2936818e0636ab4b954a8afbb2900c6d23307d331e95fb5217e",
+     "quality.json": "b73d99d09d2fcfce15ccf10967965a3d73c1e3800d08cd7dbaeecbcc3096f4df"
+    },
+    "tree_digest": "8af2ae75a193d61500135ad04235abd59d800e264fc19d820d2a67bff5f02c9f",
+    "findings": [],
+    "finding_count": 0,
+    "truncated": false,
+    "scope": {
+     "identifier_count": 6199,
+     "scored_windows": [
+      [
+       "2024-01-01",
+       "2024-12-01"
+      ],
+      [
+       "2025-01-01",
+       "2026-07-01"
+      ]
+     ],
+     "split_files_excluded": 3,
+     "executes_code": false
+    }
+   }
+  },
+  {
+   "check": "contract.declared",
+   "ok": true,
+   "detail": "evaluation_contract required: intended use, access, vintage and evidence",
+   "evidence": {}
+  },
+  {
+   "check": "contract.scope",
+   "ok": true,
+   "detail": "use='retrospective_research'; access='isolated_rows'; eval is development, holdout is final",
+   "evidence": {}
+  },
+  {
+   "check": "contract.every_input_has_availability_evidence",
+   "ok": true,
+   "detail": "Every solver-visible non-target column needs availability evidence; missing: []",
+   "evidence": {}
+  },
+  {
+   "check": "contract.vintage_and_selection",
+   "ok": true,
+   "detail": "Vintage, selection and limitations must be explicit; declarations are not measurements",
+   "evidence": {}
+  },
+  {
+   "check": "contract.cross_row_review",
+   "ok": true,
+   "detail": "Document applicable cross-row probes and every solver-visible auxiliary file",
+   "evidence": {}
+  },
+  {
+   "check": "contract.label_availability",
+   "ok": true,
+   "detail": "No full-row availability ledger: training-label timing UNVERIFIED; retrospective use only",
+   "evidence": {}
+  },
+  {
+   "check": "leakage.declared_columns",
+   "ok": true,
+   "detail": "every shipped column is declared",
+   "evidence": {
+    "undeclared": []
+   }
+  },
+  {
+   "check": "leakage.answer_source_absent",
+   "ok": true,
+   "detail": "no answer source or post-hoc column is shipped",
+   "evidence": {
+    "shipped_forbidden": []
+   }
+  },
+  {
+   "check": "leakage.every_column_could_be_scored",
+   "ok": true,
+   "detail": "every column was scored for leakage",
+   "evidence": {
+    "unscorable": []
+   }
+  },
+  {
+   "check": "leakage.no_single_column_determines_the_target",
+   "ok": true,
+   "detail": "no shipped column separates the classes on its own",
+   "evidence": {
+    "offenders": [],
+    "high_cardinality": [
+     "pwsid@eval",
+     "pwsid@holdout",
+     "pwsid@train",
+     "sample_id@eval",
+     "sample_id@holdout",
+     "sample_id@train"
+    ],
+    "missing_splits": []
+   }
+  },
+  {
+   "check": "leakage.high_cardinality_declared",
+   "ok": true,
+   "detail": "high-cardinality columns are declared as identifiers or free fields",
+   "evidence": {
+    "undeclared": [],
+    "declared": [
+     "collection_date",
+     "pwsid",
+     "sample_id"
+    ]
+   }
+  },
+  {
+   "check": "timing.prediction_time_declared",
+   "ok": true,
+   "detail": "prediction instant is declared",
+   "evidence": {}
+  },
+  {
+   "check": "timing.no_post_hoc_feature",
+   "ok": true,
+   "detail": "no feature is documented as post-hoc",
+   "evidence": {
+    "overlap": []
+   }
+  },
+  {
+   "check": "timing.label_source_is_not_a_feature",
+   "ok": true,
+   "detail": "the label source is not a feature",
+   "evidence": {
+    "source_features": []
+   }
+  },
+  {
+   "check": "timing.every_feature_documented",
+   "ok": true,
+   "detail": "features documented as available 'prediction_time'",
+   "evidence": {
+    "features_documented_at": "prediction_time"
+   }
+  },
+  {
+   "check": "timing.instant_declared",
+   "ok": true,
+   "detail": "prediction instant kind='event_time' citation=True",
+   "evidence": {
+    "prediction_instant": {
+     "citation": "First UCMR 5 entry-point sample CollectionDate; current-vintage feature availability is unverified.",
+     "days_after_period_end": null,
+     "kind": "event_time",
+     "period": null
+    }
+   }
+  },
+  {
+   "check": "timing.publication_lag_measured",
+   "ok": true,
+   "detail": "0 of 0 observed period_end -> published dates are usable",
+   "evidence": {
+    "observations": [],
+    "measured_lag_days": null,
+    "source_kind": "administrative_record"
+   }
+  },
+  {
+   "check": "timing.event_feature_availability_unverified",
+   "ok": true,
+   "detail": "Administrative current-vintage retrospective research: event-time availability UNVERIFIED; no period lag invented",
+   "evidence": {
+    "features_lag_days": null,
+    "instant_lag_days": null,
+    "measured_lag_days": null
+   }
+  },
+  {
+   "check": "timing.instant_accounts_for_publication_lag",
+   "ok": true,
+   "detail": "instant kind is 'event_time' while features publish Noned after the period",
+   "evidence": {
+    "kind": "event_time",
+    "features_lag_days": null
+   }
+  },
+  {
+   "check": "timing.event_selection_declared",
+   "ok": true,
+   "detail": "Event selection rule declared for retrospective review; prediction-time eligibility is not established",
+   "evidence": {
+    "latest_period_used": "",
+    "fields": [
+     "SamplePointType",
+     "CollectionDate",
+     "Contaminant",
+     "AnalyticalResultsSign",
+     "AnalyticalResultValue",
+     "SampleID",
+     "SampleEventCode"
+    ],
+    "rule": "Keep entry-point samples with a documented PFOA or PFOS result sign and a nonmissing CollectionDate, counting and excluding rows that lack either; select the earliest sample per water system by CollectionDate, breaking ties by SampleID; ship only first samples whose date falls in the fixed half-open windows that embargo December 2023 and December 2024 and cover 2023 through June 2026; count and report first samples excluded by the windows."
+   }
+  },
+  {
+   "check": "units.measured_columns_declare_unit_and_frame",
+   "ok": true,
+   "detail": "2 measured column(s) declare unit and frame",
+   "evidence": {
+    "measurements": [
+     {
+      "column": "AnalyticalResultValue",
+      "frame": "UCMR 5 analytical result for PFOA or PFOS at an entry point; a blank value with the less-than sign means below the UCMR 5 minimum reporting level.",
+      "unit": "ug/L"
+     },
+     {
+      "column": "prior_ucmr3_max_pfoa_pfos",
+      "frame": "Maximum detected UCMR 3 PFOA or PFOS result at the same water system where the result sign is the equals code; when the system has only non-detect prior rows, the maximum reported MRL is used as a sourced censoring bound and is not an observed concentration; missing only when the system has no UCMR 3 PFOA or PFOS row.",
+      "unit": "ug/L"
+     }
+    ]
+   }
+  },
+  {
+   "check": "units.validation_receipt",
+   "ok": true,
+   "detail": "External-threshold checks need a source-bound counts-only receipt; never ship fixture answers",
+   "evidence": {
+    "receipt": {
+     "checks": 2,
+     "mismatches": 0,
+     "source": "source-checks.json: unit checks",
+     "evidence_sha256": "6c7b703518ecb83900133c26062cf9559449de6b4829978a73fa37f22154c79f"
+    }
+   }
+  },
+  {
+   "check": "splits.time_column_declared",
+   "ok": true,
+   "detail": "split overlap is checked against 'collection_date'",
+   "evidence": {}
+  },
+  {
+   "check": "splits.machine_readable_windows",
+   "ok": true,
+   "detail": "train/eval/holdout windows are declared with start/end",
+   "evidence": {
+    "split_windows": {
+     "eval": {
+      "end": "2024-12-01T00:00:00.000",
+      "start": "2024-01-01T00:00:00.000"
+     },
+     "holdout": {
+      "end": "2026-07-01T00:00:00.000",
+      "start": "2025-01-01T00:00:00.000"
+     },
+     "train": {
+      "end": "2023-12-01T00:00:00.000",
+      "start": "2023-01-01T00:00:00.000"
+     }
+    }
+   }
+  },
+  {
+   "check": "splits.files_present",
+   "ok": true,
+   "detail": "all three split files exist",
+   "evidence": {
+    "missing": []
+   }
+  },
+  {
+   "check": "splits.non_empty",
+   "ok": true,
+   "detail": "every split has rows",
+   "evidence": {
+    "train": {
+     "rows": 3874,
+     "positives": 348,
+     "negatives": 3526,
+     "positive_rate": 0.08983
+    },
+    "eval": {
+     "rows": 3769,
+     "positives": 315,
+     "negatives": 3454,
+     "positive_rate": 0.083577
+    },
+    "holdout": {
+     "rows": 2430,
+     "positives": 168,
+     "negatives": 2262,
+     "positive_rate": 0.069136
+    }
+   }
+  },
+  {
+   "check": "splits.eval_and_holdout_have_both_classes",
+   "ok": true,
+   "detail": "eval and holdout each contain positives and negatives",
+   "evidence": {
+    "train": {
+     "rows": 3874,
+     "positives": 348,
+     "negatives": 3526,
+     "positive_rate": 0.08983
+    },
+    "eval": {
+     "rows": 3769,
+     "positives": 315,
+     "negatives": 3454,
+     "positive_rate": 0.083577
+    },
+    "holdout": {
+     "rows": 2430,
+     "positives": 168,
+     "negatives": 2262,
+     "positive_rate": 0.069136
+    }
+   }
+  },
+  {
+   "check": "splits.positive_events_declared",
+   "ok": true,
+   "detail": "eval and holdout declare positives and distinct events",
+   "evidence": {
+    "declared": {
+     "train": {
+      "positives": 348,
+      "distinct_events": 132
+     },
+     "eval": {
+      "positives": 315,
+      "distinct_events": 138
+     },
+     "holdout": {
+      "positives": 168,
+      "distinct_events": 71
+     }
+    }
+   }
+  },
+  {
+   "check": "splits.positive_events_match_rows",
+   "ok": true,
+   "detail": "declared positive counts match the rows",
+   "evidence": {
+    "mismatched": []
+   }
+  },
+  {
+   "check": "splits.event_key_column_declared",
+   "ok": true,
+   "detail": "clustered events are counted by 'collection_date' (date part)",
+   "evidence": {}
+  },
+  {
+   "check": "splits.distinct_events_match_rows",
+   "ok": true,
+   "detail": "declared clustered event counts match the rows",
+   "evidence": {
+    "recomputed": {
+     "train": 132,
+     "eval": 138,
+     "holdout": 71
+    },
+    "declared": {
+     "train": {
+      "positives": 348,
+      "distinct_events": 132
+     },
+     "eval": {
+      "positives": 315,
+      "distinct_events": 138
+     },
+     "holdout": {
+      "positives": 168,
+      "distinct_events": 71
+     }
+    }
+   }
+  },
+  {
+   "check": "splits.enough_clustered_positives",
+   "ok": true,
+   "detail": "eval and holdout carry enough independent positive events to score",
+   "evidence": {
+    "thin": [],
+    "recomputed_events": {
+     "train": 132,
+     "eval": 138,
+     "holdout": 71
+    },
+    "minimums": {
+     "positives": 30,
+     "distinct_events": 20
+    }
+   }
+  },
+  {
+   "check": "splits.rates_not_uniform",
+   "ok": true,
+   "detail": "positive rates are between 0 and 1",
+   "evidence": {
+    "rates": [
+     0.08983,
+     0.083577,
+     0.069136
+    ]
+   }
+  },
+  {
+   "check": "splits.actual_ranges_computed",
+   "ok": true,
+   "detail": "row timestamps found for every split",
+   "evidence": {
+    "ranges": {
+     "train": {
+      "min": "2023-01-03",
+      "max": "2023-11-30"
+     },
+     "eval": {
+      "min": "2024-01-02",
+      "max": "2024-11-26"
+     },
+     "holdout": {
+      "min": "2025-01-02",
+      "max": "2026-06-16"
+     }
+    }
+   }
+  },
+  {
+   "check": "splits.actual_ranges_disjoint",
+   "ok": true,
+   "detail": "the rows of the three splits occupy disjoint periods",
+   "evidence": {
+    "ranges": {
+     "train": {
+      "min": "2023-01-03",
+      "max": "2023-11-30"
+     },
+     "eval": {
+      "min": "2024-01-02",
+      "max": "2024-11-26"
+     },
+     "holdout": {
+      "min": "2025-01-02",
+      "max": "2026-06-16"
+     }
+    },
+    "overlaps": []
+   }
+  },
+  {
+   "check": "splits.rows_within_declared_windows",
+   "ok": true,
+   "detail": "every row falls inside its split's declared window",
+   "evidence": {
+    "windows": {
+     "eval": {
+      "end": "2024-12-01T00:00:00.000",
+      "start": "2024-01-01T00:00:00.000"
+     },
+     "holdout": {
+      "end": "2026-07-01T00:00:00.000",
+      "start": "2025-01-01T00:00:00.000"
+     },
+     "train": {
+      "end": "2023-12-01T00:00:00.000",
+      "start": "2023-01-01T00:00:00.000"
+     }
+    },
+    "ranges": {
+     "train": {
+      "min": "2023-01-03",
+      "max": "2023-11-30"
+     },
+     "eval": {
+      "min": "2024-01-02",
+      "max": "2024-11-26"
+     },
+     "holdout": {
+      "min": "2025-01-02",
+      "max": "2026-06-16"
+     }
+    }
+   }
+  },
+  {
+   "check": "splits.no_cross_split_entities",
+   "ok": true,
+   "detail": "no pwsid appears in more than one split",
+   "evidence": {
+    "shared_sample": [],
+    "shared_count": 0
+   }
+  },
+  {
+   "check": "splits.duplicate_entities_within_splits",
+   "ok": true,
+   "detail": "0 repeated-identifier rows within splits, at most the declared 0",
+   "evidence": {
+    "duplicate_rows": {},
+    "declared": 0
+   }
+  },
+  {
+   "check": "runner.layout",
+   "ok": true,
+   "detail": "holdout is private and train/eval are public",
+   "evidence": {}
+  },
+  {
+   "check": "runner.meta_json_keys",
+   "ok": true,
+   "detail": "meta.json carries the keys the runner reads",
+   "evidence": {
+    "keys": [
+     "columns",
+     "description",
+     "id_columns",
+     "name",
+     "positive_label",
+     "positive_rate",
+     "rows",
+     "split",
+     "split_description",
+     "target"
+    ]
+   }
+  },
+  {
+   "check": "runner.meta_matches_files",
+   "ok": true,
+   "detail": "meta.json agrees with the split files",
+   "evidence": {
+    "problems": []
+   }
+  },
+  {
+   "check": "runner.meta_counts_match_files",
+   "ok": true,
+   "detail": "meta rows and rates match the files",
+   "evidence": {}
+  },
+  {
+   "check": "runner.id_columns_are_not_features",
+   "ok": true,
+   "detail": "declared identifiers are not also listed as features",
+   "evidence": {}
+  }
+ ],
+ "failed_checks": []
+}
