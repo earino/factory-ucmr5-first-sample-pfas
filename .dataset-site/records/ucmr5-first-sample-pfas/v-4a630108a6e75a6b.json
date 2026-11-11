@@ -1,0 +1,321 @@
+{
+  "artifact_version": "1bf9c8af47a3cd62f65faa7f22efd3fd66ddc1f8ba0fbb0762b391cf6fb04a10",
+  "assets": {
+    "LICENSE-EVIDENCE.json": {
+      "bytes": 725,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/LICENSE-EVIDENCE.json",
+      "hf_path": "LICENSE-EVIDENCE.json",
+      "sha256": "99fbc3dc8ad118ab428b26fbd276beb792b5d18bdbf3492d3f63138ea7378060"
+    },
+    "LICENSE.md": {
+      "bytes": 1041,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/LICENSE.md",
+      "hf_path": "LICENSE.md",
+      "sha256": "3d3dfcdd0a67a0356f76edd7192dbed7ebb71d6784bc09310e3b6bb46574cf24"
+    },
+    "README.md": {
+      "bytes": 7715,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/README.md",
+      "hf_path": "README.md",
+      "sha256": "36a064f50cef70801d1bcb9dd7871f02010d1a72ec51d9309833437b85642450"
+    },
+    "SOURCES.json": {
+      "bytes": 1202,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/SOURCES.json",
+      "hf_path": "SOURCES.json",
+      "sha256": "07bf65fb2d33c0753fa1abd309c732030f9a184413d52fc29bb6c390ca974ecc"
+    },
+    "evaluation.json": {
+      "bytes": 1995,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/evaluation.json",
+      "hf_path": "evaluation.json",
+      "sha256": "7751d0f175a70f94f68f0b861a2a0529f361d11c3e63d23586607e28d70e83f1"
+    },
+    "extract__meta.json": {
+      "bytes": 1707,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/extract__meta.json",
+      "hf_path": "extract/meta.json",
+      "sha256": "7b93c7461f50034cdeb5ec7a5aeefe7c6cd9ea85c30be1366332d15e94f0cba6"
+    },
+    "extract__private__holdout.csv": {
+      "bytes": 162966,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/extract__private__holdout.csv",
+      "hf_path": "extract/private/holdout.csv",
+      "sha256": "7824b322a77101a31b0f719cfe249c768c665c81f9557a9320cda02ee88727d0"
+    },
+    "extract__public__eval.csv": {
+      "bytes": 261780,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/extract__public__eval.csv",
+      "hf_path": "extract/public/eval.csv",
+      "sha256": "f4163dc298227d9b33a66f2f58807b0fe126b62fd32feb159a06e3628879e9e7"
+    },
+    "extract__public__train.csv": {
+      "bytes": 271826,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/extract__public__train.csv",
+      "hf_path": "extract/public/train.csv",
+      "sha256": "4c962f5f9e87f2936818e0636ab4b954a8afbb2900c6d23307d331e95fb5217e"
+    },
+    "extract__quality.json": {
+      "bytes": 24499,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/extract__quality.json",
+      "hf_path": "extract/quality.json",
+      "sha256": "b73d99d09d2fcfce15ccf10967965a3d73c1e3800d08cd7dbaeecbcc3096f4df"
+    },
+    "get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/get_dataset.py",
+      "hf_path": "get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "qualification.json": {
+      "bytes": 17703,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/qualification.json",
+      "hf_path": "qualification.json",
+      "sha256": "107f9d1563673160615db471c823cae68fedcf72ba90e360c07edadeabb5f9dd"
+    },
+    "reproduction__LICENSE-CC0-1.0.txt": {
+      "bytes": 7048,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__LICENSE-CC0-1.0.txt",
+      "hf_path": "reproduction/LICENSE-CC0-1.0.txt",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    "reproduction__LICENSE-MIT.txt": {
+      "bytes": 1124,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__LICENSE-MIT.txt",
+      "hf_path": "reproduction/LICENSE-MIT.txt",
+      "sha256": "56b932ff064e5da113ae10175c8546325f64f26e1ece71683ffcbf8b2304fe1c"
+    },
+    "reproduction__artifact_scrub.py": {
+      "bytes": 11369,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__artifact_scrub.py",
+      "hf_path": "reproduction/artifact_scrub.py",
+      "sha256": "8c663253e691a7b8751f9c853b40a3752a833360caafb1ea8e8f534e64af4b68"
+    },
+    "reproduction__build.py": {
+      "bytes": 42784,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__build.py",
+      "hf_path": "reproduction/build.py",
+      "sha256": "131676306706320eee7b694c9c7b7cee0c5c481d626a2fd15fc2d2846075be8d"
+    },
+    "reproduction__construction.json": {
+      "bytes": 26909,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__construction.json",
+      "hf_path": "reproduction/construction.json",
+      "sha256": "bfbc835dff53c05c4d933b8b326b1b8f470855b985de4f994e03f2bed24cb684"
+    },
+    "reproduction__dataset_package.py": {
+      "bytes": 7927,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__dataset_package.py",
+      "hf_path": "reproduction/dataset_package.py",
+      "sha256": "c2364defe58dcc99322be59a1bb04894ce00e823ce37afeb37bc31012f744327"
+    },
+    "reproduction__dataset_run.py": {
+      "bytes": 12381,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__dataset_run.py",
+      "hf_path": "reproduction/dataset_run.py",
+      "sha256": "8085fae14d6e93b852e692e18c1ef72113a3601f48f78901b6d1ae6db278de57"
+    },
+    "reproduction__get_dataset.py": {
+      "bytes": 3680,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__get_dataset.py",
+      "hf_path": "reproduction/get_dataset.py",
+      "sha256": "fad89222d50f9d9709225c34909be74c591df409c08b8b5951eba9d3cadfdd48"
+    },
+    "reproduction__leakage_battery.py": {
+      "bytes": 17379,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__leakage_battery.py",
+      "hf_path": "reproduction/leakage_battery.py",
+      "sha256": "adbf7ee0aca0012b78cc1f1e4aeb968a23717cae30f66a02e080215e75f830e3"
+    },
+    "reproduction__provenance.json": {
+      "bytes": 573,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__provenance.json",
+      "hf_path": "reproduction/provenance.json",
+      "sha256": "acf50a91791bf77a1400d9efa3adc765d1405181e3f884ab9dd6d9130065980d"
+    },
+    "reproduction__qualify_dataset.py": {
+      "bytes": 65144,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__qualify_dataset.py",
+      "hf_path": "reproduction/qualify_dataset.py",
+      "sha256": "91b8d7a3edc20721a46dd22d5ea54882d331995c2a917bef534aebb22aa317c1"
+    },
+    "reproduction__recovery_recipes.py": {
+      "bytes": 17609,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__recovery_recipes.py",
+      "hf_path": "reproduction/recovery_recipes.py",
+      "sha256": "f64c542fcda232169c95ace17421b45275194b934938c0ea4c9b68e6f844ad0e"
+    },
+    "reproduction__requirements.txt": {
+      "bytes": 160,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__requirements.txt",
+      "hf_path": "reproduction/requirements.txt",
+      "sha256": "5c72f3268174d20364624f76680e189c408a05dba2e7b8cfe12d077b3865e7f0"
+    },
+    "reproduction__source.json": {
+      "bytes": 17647,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__source.json",
+      "hf_path": "reproduction/source.json",
+      "sha256": "451b6a2f0618537cdf12c2b02ea9698cee5f4356302f594f4f97ed9802a0f393"
+    },
+    "reproduction__source_io.py": {
+      "bytes": 5607,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__source_io.py",
+      "hf_path": "reproduction/source_io.py",
+      "sha256": "0c60eed4968cd342148efbaac7e4fa98f00708d8e6c14c0929928687b9af1ea3"
+    },
+    "reproduction__train.py": {
+      "bytes": 2500,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__train.py",
+      "hf_path": "reproduction/train.py",
+      "sha256": "a3c6bcf13735bc85c52129ded68f839090dffdc266ebc3810dc61b2e6ea5e7e8"
+    },
+    "reproduction__validate.py": {
+      "bytes": 1277,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__validate.py",
+      "hf_path": "reproduction/validate.py",
+      "sha256": "b597e7f84fed614e64b4a86fbecbd6ec0145916a24d0d221a796586976418e7b"
+    },
+    "reproduction__validate.sh": {
+      "bytes": 482,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/reproduction__validate.sh",
+      "hf_path": "reproduction/validate.sh",
+      "sha256": "3f06ca48f11c2e05d331b4d8394284925de660c1d4b086d2f8243959e83b7e6d"
+    },
+    "source-checks.json": {
+      "bytes": 12526,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/source-checks.json",
+      "hf_path": "source-checks.json",
+      "sha256": "6c7b703518ecb83900133c26062cf9559449de6b4829978a73fa37f22154c79f"
+    },
+    "source-snapshot.tar.gz": {
+      "bytes": 22320018,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/source-snapshot.tar.gz",
+      "hf_path": "source-snapshot.tar.gz",
+      "sha256": "a659459416476b84cbdb9146f3c07d81a4e4e936d8ff8896b3a8829b993df12d"
+    },
+    "verify_dataset.py": {
+      "bytes": 1276,
+      "download": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/download/v-4a630108a6e75a6b/verify_dataset.py",
+      "hf_path": "verify_dataset.py",
+      "sha256": "f4a4bb7f565cdbd075c520621f881876b491eaed91a5e6e70afb31e4753f9834"
+    }
+  },
+  "baseline": {
+    "metrics": {
+      "Validation calendar_identity auc": 0.5,
+      "Validation calendar_identity brier": 0.0766306076535297,
+      "Validation full_model auc": 0.7856421356421357,
+      "Validation full_model brier": 0.06860848158758656,
+      "Validation majority_prior auc": 0.5,
+      "Validation majority_prior brier": 0.0766306076535297,
+      "Validation persistence auc": 0.4525491493644361,
+      "Validation persistence brier": 0.08101381885983604
+    },
+    "scope": "Existing unmodified runner baseline on public validation only; no holdout scoring"
+  },
+  "configs": [],
+  "dataset": "ucmr5-first-sample-pfas",
+  "documents": [
+    [
+      "README.md",
+      "Loading and reproduction"
+    ],
+    [
+      "evaluation.json",
+      "Measured baseline"
+    ],
+    [
+      "LICENSE.md",
+      "Licence and attribution"
+    ]
+  ],
+  "domain": "U.S. Environmental Protection Agency (EPA)",
+  "evaluation_use": "retrospective_research",
+  "github_repository": "earino/factory-ucmr5-first-sample-pfas",
+  "hf_repository": "earino/factory-ucmr5-first-sample-pfas",
+  "licenses": {
+    "attribution": "U.S. Environmental Protection Agency (EPA)",
+    "citation": "U.S. Environmental Protection Agency. The Fifth Unregulated Contaminant Monitoring Rule (UCMR 5) Data Summary: July 2026. EPA 815-S-26-007.",
+    "code": "MIT",
+    "compilation_scope": "Our additional compilation rights only; upstream terms remain in force.",
+    "data_compilation": "CC0-1.0",
+    "source_data": "Public domain (U.S. EPA Standard Open Data License; 17 U.S.C. §105)"
+  },
+  "limitations": [
+    "UCMR 5 is occurrence monitoring at entry points, not compliance monitoring; a result at or above the MRL is not a violation or a determination that the system exceeds an MCL.",
+    "The first sample is a single snapshot at one entry point; systems with multiple facilities or sample points can have heterogeneous PFOA/PFOS results, so the label is sample-level, not a system-wide contamination determination.",
+    "The final UCMR 5 dataset was released in 2026; system size is as of February 1, 2021, prior UCMR 3 files were revised in 2024, and self-reported additional data elements may have been updated after sampling. This is current-vintage retrospective research, not proof of historical operational availability.",
+    "Results below the UCMR 5 MRL are censored (null), so the label captures detection at the reporting threshold, not concentration magnitude or low-level exposure.",
+    "First-sample collection dates are determined by monitoring schedules rather than random assignment; chronological splits can reflect rollout differences by system size, state, and laboratory capacity.",
+    "UCMR 5 covered community water systems and non-transient non-community water systems, not transient non-community systems, and small-system participation was a nationally representative sample rather than a census.",
+    "EPA's public-domain designation is a U.S. domestic basis; reusers outside the United States must assess local rights. Any CC0 release of the derived table applies only to that contribution and does not alter EPA's upstream designation.",
+    "This is a predictive association task, not a causal analysis of source-water contamination or treatment effectiveness.",
+    "The final UCMR 5 file includes samples collected through mid-2026, beyond the January 2023 through December 2025 monitoring-cycle text on the occurrence page; the frozen holdout window follows the observed data through 2026-06-30.",
+    "UCMR 5 is occurrence monitoring at entry points, not compliance monitoring; a result at or above the minimum reporting level is not a violation or an MCL determination.",
+    "The label is sample-level at one entry point; systems with multiple facilities or sample points can have heterogeneous PFOA or PFOS results.",
+    "The final UCMR 5 dataset was released in 2026; system size reflects a 2021 vintage, UCMR 3 files were revised, and self-reported additional data elements may have been edited after sampling. This is current-vintage retrospective research, not proof of historical operational availability.",
+    "Results below the UCMR 5 minimum reporting level are censored, so the label captures detection at the reporting threshold, not concentration magnitude.",
+    "First-sample collection dates follow monitoring schedules rather than random assignment, so chronological splits can reflect rollout differences by system size, state, and laboratory capacity. First samples whose dates fall in the December embargo or outside the windows are excluded by the fixed first-sample selection and are counted in a source check, so a system whose earliest sample falls there is not represented even if a later in-window sample exists.",
+    "Samples with a blank CollectionDate are excluded and counted before first-sample selection; they are not assigned to any split.",
+    "UCMR 5 covered community water systems and non-transient non-community water systems, not transient non-community systems, and small-system participation was a representative sample rather than a census.",
+    "Additional data element concepts are stored as rows in the AdditionalDataElement field rather than as header columns. The builder filters documented values and attaches Response values only through the exact available system, facility, sample point, and sample event key, or the exact system, facility, and sample point key when no event code exists. It never falls back to a system-only join. Unmatched rows remain missing. The additional-data responses are undated self-reports, so pre-sample availability is assumed rather than proven.",
+    "For UCMR 3 systems with only non-detect PFOA or PFOS rows, the prior maximum uses the maximum reported MRL as a sourced censoring bound, not an observed concentration and not zero. The prior maximum is missing only when the system has no UCMR 3 PFOA or PFOS row.",
+    "The occurrence text file carries a non-UTF-8 micro sign byte in the concentration unit text; the builder decodes publisher text with the Windows-1252 codec and checks UCMR 5 and UCMR 3 units.",
+    "The label check uses an independent csv-module pass over the occurrence text and compares the written labels, source signs, source values, units, and MRLs; it does not rely on the in-memory pandas label expression.",
+    "collection_year is constant within the train and eval windows and is a split tag, not a transferable feature.",
+    "No uncertainty interval; observed differences do not establish universal headroom"
+  ],
+  "post": {
+    "paragraphs": [
+      "For a U.S. public water system subject to UCMR 5, will its first entry-point sample contain PFOA or PFOS at or above the UCMR 5 minimum reporting level?",
+      "Population: Public water systems subject to UCMR 5 whose earliest entry-point sample (SamplePointType EP) with a documented PFOA or PFOS result sign and a nonmissing CollectionDate falls inside one of the frozen half-open split windows. One row per such PWS: that earliest sample by CollectionDate with deterministic tie-break by SampleID. Because the earliest sample is selected before window assignment, first samples in the December 2023 or December 2024 embargo or outside 2023 through 2026 are excluded and counted; a system whose earliest sample falls there is not represented even if a later in-window sample exists. Samples with missing CollectionDate, non-entry-point sample types, or no documented PFOA or PFOS result sign are excluded and counted. UCMR 5 covered community water systems and non-transient non-community water systems, not transient non-community systems.",
+      "Target: any_pfoa_pfos = 1 if the selected first sample has AnalyticalResultsSign = '=' and AnalyticalResultValue >= 0.004 µg/L for either PFOA or PFOS; otherwise 0. The 0.004 µg/L threshold is the UCMR 5 minimum reporting level for both analytes, set before sampling; the 2024 MCL happens to be numerically the same but is not used to define the label. Current-sample result fields are used only to form the label and are excluded from inputs.",
+      "Prediction time: Immediately before the first UCMR 5 entry-point sample is collected, recorded as CollectionDate; current-sample result fields are excluded. System attributes and prior UCMR 3 results are treated as pre-sample. Self-reported additional-data elements are attached only when the additional-data row matches the exact available system, facility, sample point, and sample event key, or the exact system, facility, and sample point key when no event code exists; unmatched rows remain missing and no system-level or cross-event fallback is used. The additional-data responses are undated self-reports, so their availability at the decision instant is assumed, not verified.",
+      "Splits: Fixed chronological split by the first sample's CollectionDate: train 2023-01-01 to 2023-11-30; eval 2024-01-01 to 2024-11-30; holdout 2025-01-01 to 2026-06-30. Exclude December 2023 and December 2024 as a 31-day embargo at each year boundary so late-period laboratory results are not realized after the next period starts. No random shuffling. Because there is one row per PWS, no panel history is used and no current-sample result enters features.",
+      "Outcome horizon: Laboratory analysis and reporting of the first sample; the label is observed in the final UCMR 5 dataset released in August 2026.",
+      "Inputs: pws_size: UCMR 5 size category based on retail population as of February 1, 2021: S at or below 10,000 or L above 10,000.; facility_water_type: Source water at the facility: SW surface water, GW ground water, GU ground water under direct surface-water influence, or MX combination.; state: State abbreviation; tribal systems without primacy are attributed to an EPA region.; epa_region: EPA region 1 through 10 for the system.; prior_ucmr3_pfoa_pfos_detect: Whether the same PWS had PFOA or PFOS at or above the UCMR 3 minimum reporting level in 2013 through 2015; 0 for monitored systems with no detection, 1 for at least one detection, and missing when the system has no UCMR 3 PFOA or PFOS row.; prior_ucmr3_max_pfoa_pfos: Maximum detected prior UCMR 3 PFOA or PFOS result in ug/L; when the system has only non-detect prior UCMR 3 rows, the maximum reported UCMR 3 MRL is used as a sourced censoring bound, not an observed concentration; missing only when the system has no UCMR 3 PFOA or PFOS result.; pfas_tested_before: PWS answer to whether it tested for PFAS before UCMR 5: YES, NO, or DK.; pfas_treatment_before: Prior PFAS treatment codes reported by the PWS, such as PAC, GAC, IEX, NRO, OZN, BAC, MFL, UVL, OTH, or NMT.; potential_pfas_sources: PWS awareness of any potential current or historical PFAS source: YES, NO, or DK.; potential_source_types: Selected potential-source codes such as MB military base, FT firefighting training, AO airport operations, WM waste management, MF manufacturing, OG oil and gas, and UT utilities.; treatment_information: Treatment codes at the sample point, such as CON, SFN, GAC, IEX, MFL, or NTU.; collection_year: Calendar year of the first sample collection date; a split tag that is constant within the train and eval windows."
+    ],
+    "title": "Will a public water system's first UCMR 5 entry-point sample contain PFOA or PFOS at or above the reporting level?"
+  },
+  "publication_commits": {
+    "github": "11eca87ceb82e960ab23b05d0dfae43b1ca54bb7",
+    "huggingface": "c99dbbd18e3d118d3654744f37c2005d40fa31a6"
+  },
+  "qualification": {
+    "gate_version": "1.6.1",
+    "result": "PASSED"
+  },
+  "record_sha256": "26400229a6e14b898bfb1d7cadf32f49283df90a73f76edfc1e39c26f3ee862a",
+  "release_date": "2026-11-08",
+  "release_schema": "factory-1",
+  "release_tag": "v-4a630108a6e75a6b",
+  "schema_version": 1,
+  "site_revision": 1,
+  "source": {
+    "name": "U.S. Environmental Protection Agency (EPA)",
+    "url": "https://www.epa.gov/dwucmr/occurrence-data-unregulated-contaminant-monitoring-rule"
+  },
+  "splits": {
+    "eval": {
+      "rows": 3769
+    },
+    "holdout": {
+      "rows": 2430
+    },
+    "train": {
+      "rows": 3874
+    }
+  },
+  "summary": "For a U.S. public water system subject to UCMR 5, will its first entry-point sample contain PFOA or PFOS at or above the UCMR 5 minimum reporting level?",
+  "task_type": "binary-classification",
+  "title": "Will a public water system's first UCMR 5 entry-point sample contain PFOA or PFOS at or above the reporting level?",
+  "urls": {
+    "catalog": "https://earino.github.io/dataset-factory-site/",
+    "github": "https://github.com/earino/factory-ucmr5-first-sample-pfas",
+    "github_release": "https://github.com/earino/factory-ucmr5-first-sample-pfas/releases/tag/v-4a630108a6e75a6b",
+    "huggingface": "https://huggingface.co/datasets/earino/factory-ucmr5-first-sample-pfas",
+    "huggingface_version": "https://huggingface.co/datasets/earino/factory-ucmr5-first-sample-pfas/tree/v-4a630108a6e75a6b",
+    "version": "https://earino.github.io/factory-ucmr5-first-sample-pfas/versions/v-4a630108a6e75a6b/",
+    "website": "https://earino.github.io/factory-ucmr5-first-sample-pfas/"
+  }
+}
