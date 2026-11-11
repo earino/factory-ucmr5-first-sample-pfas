@@ -197,8 +197,15 @@ def dataset_body(r):
         ("Question", r["summary"]), ("Field", r["domain"] + " / " + r["task_type"]),
         ("Rows", f"{rows:,}"), ("Documented splits", str(len(r["splits"]))),
         ("This version", r["release_tag"]), ("Released", r["release_date"])))
+    headline_metrics = r['baseline']['metrics']
+    if r.get('release_schema') == 'factory-1':
+        # Full controls remain in the linked evaluation and version record. Short
+        # headline labels leave room for values on the existing mobile table.
+        labels = {'Validation full_model auc': 'Validation ROC AUC',
+                  'Validation full_model brier': 'Validation Brier'}
+        headline_metrics = {labels[k]: v for k, v in headline_metrics.items() if k in labels}
     metrics = "".join(f'<tr><th scope="row">{esc(k)}</th><td>{esc(v)}</td></tr>'
-                      for k, v in r["baseline"]["metrics"].items())
+                      for k, v in headline_metrics.items())
     return f'''<h1>{esc(r['title'])}</h1>
 <p class="intro">{esc(r['summary'])}</p>
 <p>Versioned research data. Read the suitability requirements before interpreting scores.</p>
